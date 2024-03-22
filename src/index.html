@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Oracle JET Starter Template - Web Nav Bar</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
+    <!-- add my own icon in the href instead of favicon-->
+    <link rel="icon" href="css/images/JET-Favicon-Red-32x32.png" type="image/x-icon" /> 
+
+    <!-- This is the main css file for the default theme -->
+		<!-- injector:theme -->
+		<!-- endinjector -->
+
+    <!-- This is where you would add any app specific styling -->
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+
+  </head>
+  <body class="oj-web-applayout-body">
+    <!-- Template for rendering navigation items -->
+    <script type="text/html" id="navTemplate">
+      <li><a href="#">
+        <oj-bind-text value="[[$data.detail.label]]"></oj-bind-text>
+      </a></li>
+    </script>
+
+    <div id="globalBody" class="oj-web-applayout-page">
+      <!--
+         ** Oracle JET V15.0.0 web application navigation bar and header patterns.
+         ** Please see the demos under Cookbook/Patterns/App Shell: Web
+         ** and the CSS documentation under Support/API Docs/Non-Component Styling
+         ** on the JET website for more information on how to use this pattern.
+      -->
+      <header role="banner" class="oj-web-applayout-header">
+        <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+          <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
+            <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+            <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
+          </div>
+        </div>
+      </header>
+      <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
+      </oj-module>
+      <footer class="oj-web-applayout-footer" role="contentinfo">
+        <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
+          <ul>
+            <oj-bind-for-each data="[[footerLinks]]">
+              <template>
+                <li>
+                  <a :id="[[$current.data.linkId]]" :href="[[$current.data.linkTarget]]">
+                    <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
+                  </a>
+                </li>
+              </template>
+            </oj-bind-for-each>
+          </ul>
+        </div>
+        <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-color-secondary oj-typography-body-sm">
+          Copyright © 2015, 2024 Oracle and/or its affiliates All rights reserved.
+        </div>
+      </footer>
+    </div>
+
+    <!-- This injects script tags for the main javascript files -->
+		<!-- injector:scripts -->
+		<!-- endinjector -->
+
+  </body>
+</html>
