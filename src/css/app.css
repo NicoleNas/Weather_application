@@ -1,10 +1,61 @@
 /*
-    Document   : override
-    Created on : <date>
-    Author     : <author>
+    Author: Nikoletta Naoumi
     Description:
-        This is where any of your application specific styles should be included
+        Here are the application specific styles
 */
+.w-button {
+  background-color: #e0e0e0;
+  margin-right: 10px;
+}
+
+.w-button .oj-button-button {
+  padding: 0 10px;
+}
+
+.w-button.highlight {
+  background-color: rgb(203, 250, 203);
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+}
+
+.w-button.highlight .oj-button-label {
+  color: rgb(104, 192, 104);
+}
+
+.page-container{
+  box-shadow: 0 0 10px 0 #e0e0e0;
+  padding: 25px;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 30px 0;
+}
+
+.weather-info-box {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 28%;
+  margin: 10px;
+  padding:30px;
+  display:block;
+}
+
+.weather-icon {
+  width:150px;
+  height:150px;
+  content:  url("images/6122714.png");
+  background-repeat: no-repeat;
+  background-position: 10px 4px;
+}
+
+.weather-info-container {
+  border-top: 3px solid lightgray;
+  border-bottom: 10px solid lightgray;
+  padding: 20px 0 40px 0;
+}
 
 .sendOffScreen {
   position: absolute;
@@ -13,6 +64,30 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.weather-details-font {
+  font-size: 14px;
+  font-family:Calibri;
+}
+
+.weather-info-font {
+  font-size: 40px;
+  font-family: Calibri;
+  font-weight:600;
+  display:block;
+}
+
+.weather-info-font2 {
+  font-size: 32px;
+  font-family: Calibri;
+  font-weight:600;
+  display:block;
+}
+
+.line-chart {
+  width: 100%;
+  height: 450px;
 }
 
 .demo-oracle-icon {

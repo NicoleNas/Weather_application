@@ -1,6 +1,84 @@
 <div class="oj-hybrid-padding">
-  <h1>Home page Content Area</h1>
-  <div>
-      Add content of this section
+  <div class="page-container">
+    <div>
+      <div class="oj-flex-start">
+        <oj-button class="oj-flex oj-flex-item w-button"
+          data-bind="click: isNowSelectedClicked, css: { highlight: isNowSelected()}">
+          <span>Now</span>
+        </oj-button>
+        <oj-button class="oj-flex oj-flex-item w-button"
+          data-bind="click: isTodaySelectedClicked, css: { highlight: isTodaySelected()}">
+          <span>Today</span>
+        </oj-button>
+        <oj-button class="oj-flex oj-flex-item w-button"
+          data-bind="click: isDateSelectedClicked, css: { highlight: isDateSelected()}">
+          <span>Select Day</span>
+        </oj-button>
+      </div>
+
+      <div>
+        <div data-bind="visible:isNowSelected">
+          <div class="weather-container">
+            <div class="oj-flex-start"><span class="weather-info-font">22 oC</span>
+              <span class="weather-details-font">Clear/Few Clouds
+              </span>
+            </div>
+
+            <img class="weather-icon">
+          </div>
+          <div class="weather-info-container">
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">18</span>
+                <span class="weather-details-font">Feels like</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">18</span>
+                <span class="weather-details-font">Wind</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">18</span>
+                <span class="weather-details-font">Wind Gust</span>
+              </div>
+
+            </div>
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">45C</span>
+                <span class="weather-details-font">Wind Deg</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">85%</span>
+                <span class="weather-details-font">Humidity</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2">18</span>
+                <span class="weather-details-font">Pressure</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <h1 data-bind="visible:isTodaySelected">Today has been selected</h1>
+        <h1 data-bind="visible:isDateSelected">Date has been selected</h1>
+      </div>
+    </div>
+
+    <div>
+      <h6>Weekly Variations</h6>
+      <div class="line-chart">
+        <oj-chart type='line' style="height: 100%; width: 100%; margin: auto;" groups=[[chartGroups]]
+          series=[[temperatureData]]>
+        </oj-chart>
+      </div>
+    </div>
   </div>
 </div>
