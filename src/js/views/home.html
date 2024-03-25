@@ -19,7 +19,114 @@
       <div>
         <div data-bind="visible:isNowSelected">
           <div class="weather-container">
-            <div class="oj-flex-start"><span class="weather-info-font">22 oC</span>
+            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: currentWeather.temp"></span>
+              <span class="weather-details-font" data-bind="text: currentWeather.description">
+              </span>
+            </div>
+
+            <img class="weather-icon" data-bind="attr: { src: currentWeather.icon }">
+          </div>
+          <div class="weather-info-container">
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.feels_like"></span>
+                <span class="weather-details-font">Feels like</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.wind_speed"></span>
+                <span class="weather-details-font">Wind</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.wind_gust"></span>
+                <span class="weather-details-font">Wind Gust</span>
+              </div>
+
+            </div>
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.wind_deg"></span>
+                <span class="weather-details-font">Wind Deg</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.humidity"></span>
+                <span class="weather-details-font">Humidity</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: currentWeather.pressure"></span>
+                <span class="weather-details-font">Pressure</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div data-bind="visible:isTodaySelected">
+          <div class="weather-container">
+            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: forecastWeather.tempAvg"></span>
+              <span class="weather-details-font" data-bind="text: forecastWeather.description">
+              </span>
+            </div>
+
+            <img class="weather-icon" data-bind="attr: { src: forecastWeather.icon }">
+          </div>
+          <div class="weather-info-container">
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: forecastWeather.feelsLikeAvg"></span>
+                <span class="weather-details-font">Feels like</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: forecastWeather.wind_speed"></span>
+                <span class="weather-details-font">Wind</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: forecastWeather.wind_gust">18</span>
+                <span class="weather-details-font">Wind Gust</span>
+              </div>
+            </div>
+
+            <div class="oj-flex">
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2"  data-bind="text: forecastWeather.wind_deg"></span>
+                <span class="weather-details-font">Wind Deg</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: forecastWeather.humidity"></span>
+                <span class="weather-details-font">Humidity</span>
+              </div>
+
+              <div class="oj-flex oj-flex-item weather-info-box">
+                <span class="weather-info-font2" data-bind="text: forecastWeather.pressure"></span>
+                <span class="weather-details-font">Pressure</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="oj-flex-start input-date-div" style="width: 100%;" data-bind="visible:isDateSelected">
+          <div class="apply-date-container oj-flex"> 
+            <div class="oj-flex oj-flex-item input-date">
+            <oj-input-date value="{{selectedDate}}" min="{{minDate}}" max="{{maxDate}}" autocomplete="off" data-bind="click: selectedVal()" required>
+            </oj-input-date></div>
+            <oj-button class="oj-flex oj-flex-item w-button" data-bind="click: applyDate, enable: !selectedDate()">Apply</oj-button>
+        </div>
+          
+        <div class="oj-flex oj-flex-item weather-info-panel" data-bind="visible: isApplyClicked">
+          <div class="weather-container">
+            <div class="oj-flex-start"><span class="weather-info-font">17 oC</span>
               <span class="weather-details-font">Clear/Few Clouds
               </span>
             </div>
@@ -43,7 +150,6 @@
                 <span class="weather-info-font2">18</span>
                 <span class="weather-details-font">Wind Gust</span>
               </div>
-
             </div>
 
             <div class="oj-flex">
@@ -64,15 +170,12 @@
 
             </div>
           </div>
-
         </div>
-
-        <h1 data-bind="visible:isTodaySelected">Today has been selected</h1>
-        <h1 data-bind="visible:isDateSelected">Date has been selected</h1>
+      </div>
       </div>
     </div>
 
-    <div>
+    <div class="chart-container">
       <h6>Weekly Variations</h6>
       <div class="line-chart">
         <oj-chart type='line' style="height: 100%; width: 100%; margin: auto;" groups=[[chartGroups]]
