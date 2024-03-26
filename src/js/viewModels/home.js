@@ -183,8 +183,6 @@ define([
     self.temperatureData([ {items: temperatures} ]);
     self.chartGroups(days);
   };
-
-    //   const mockData = {
     //   "lat": 40.5873,
     //   "lon": 22.9482,
     //   "timezone": "Europe/Athens",
