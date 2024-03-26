@@ -19,28 +19,28 @@
       <div>
         <div data-bind="visible:isNowSelected">
           <div class="weather-container">
-            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: currentWeather.temp"></span>
-              <span class="weather-details-font" data-bind="text: currentWeather.description">
+            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: weatherProps.temp"></span>
+              <span class="weather-details-font" data-bind="text: weatherProps.description">
               </span>
             </div>
 
-            <img class="weather-icon" data-bind="attr: { src: currentWeather.icon }">
+            <img class="weather-icon" data-bind="attr: { src: weatherProps.icon }">
           </div>
           <div class="weather-info-container">
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.feels_like"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.feels_like"></span>
                 <span class="weather-details-font">Feels like</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.wind_speed"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_speed"></span>
                 <span class="weather-details-font">Wind</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.wind_gust"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_gust"></span>
                 <span class="weather-details-font">Wind Gust</span>
               </div>
 
@@ -48,17 +48,17 @@
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.wind_deg"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_deg"></span>
                 <span class="weather-details-font">Wind Deg</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.humidity"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.humidity"></span>
                 <span class="weather-details-font">Humidity</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: currentWeather.pressure"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.pressure"></span>
                 <span class="weather-details-font">Pressure</span>
               </div>
 
@@ -69,45 +69,45 @@
 
         <div data-bind="visible:isTodaySelected">
           <div class="weather-container">
-            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: forecastWeather.tempAvg"></span>
-              <span class="weather-details-font" data-bind="text: forecastWeather.description">
+            <div class="oj-flex-start"><span class="weather-info-font" data-bind="text: weatherProps.tempAvg"></span>
+              <span class="weather-details-font" data-bind="text: weatherProps.description">
               </span>
             </div>
 
-            <img class="weather-icon" data-bind="attr: { src: forecastWeather.icon }">
+            <img class="weather-icon" data-bind="attr: { src: weatherProps.icon }">
           </div>
           <div class="weather-info-container">
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeather.feelsLikeAvg"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.feelsLikeAvg"></span>
                 <span class="weather-details-font">Feels like</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeather.wind_speed"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_speed"></span>
                 <span class="weather-details-font">Wind</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeather.wind_gust">18</span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_gust">18</span>
                 <span class="weather-details-font">Wind Gust</span>
               </div>
             </div>
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2"  data-bind="text: forecastWeather.wind_deg"></span>
+                <span class="weather-info-font2"  data-bind="text: weatherProps.wind_deg"></span>
                 <span class="weather-details-font">Wind Deg</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeather.humidity"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.humidity"></span>
                 <span class="weather-details-font">Humidity</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeather.pressure"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.pressure"></span>
                 <span class="weather-details-font">Pressure</span>
               </div>
 
@@ -127,45 +127,45 @@
         <div class="oj-flex oj-flex-item weather-info-panel" data-bind="click:applyDate, visible: isApplyClicked">
           <div class="weather-container">
             <div class="oj-flex-start">
-              <span class="weather-info-font" data-bind="text: forecastWeatherByDate.tempAvg"></span>
-              <span class="weather-details-font" data-bind="text: forecastWeatherByDate.description">
+              <span class="weather-info-font" data-bind="text: weatherProps.tempAvg"></span>
+              <span class="weather-details-font" data-bind="text: weatherProps.description">
               </span>
             </div>
 
-            <img class="weather-icon" data-bind="attr: { src: forecastWeatherByDate.icon }">
+            <img class="weather-icon" data-bind="attr: { src: weatherProps.icon }">
           </div>
           <div class="weather-info-container">
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.feelsLikeAvg"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.feelsLikeAvg"></span>
                 <span class="weather-details-font">Feels like</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind"></span>
                 <span class="weather-details-font">Wind</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_gust"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_gust"></span>
                 <span class="weather-details-font">Wind Gust</span>
               </div>
             </div>
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_gust"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_gust"></span>
                 <span class="weather-details-font">Wind Deg</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_deg"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.wind_deg"></span>
                 <span class="weather-details-font">Humidity</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.pressure"></span>
+                <span class="weather-info-font2" data-bind="text: weatherProps.pressure"></span>
                 <span class="weather-details-font">Pressure</span>
               </div>
             </div>
