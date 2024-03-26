@@ -119,55 +119,55 @@
         <div class="oj-flex-start input-date-div" style="width: 100%;" data-bind="visible:isDateSelected">
           <div class="apply-date-container oj-flex"> 
             <div class="oj-flex oj-flex-item input-date">
-            <oj-input-date value="{{selectedDate}}" min="{{minDate}}" max="{{maxDate}}" autocomplete="off" data-bind="click: selectedVal()" required>
+            <oj-input-date value="{{selectedDate}}" min="{{minDate}}" max="{{maxDate}}" autocomplete="off" required>
             </oj-input-date></div>
-            <oj-button class="oj-flex oj-flex-item w-button" data-bind="click: applyDate, enable: !selectedDate()">Apply</oj-button>
+            <oj-button class="oj-flex oj-flex-item w-button" data-bind="click: applyDate, visible: selectedDate">Apply</oj-button>
         </div>
           
-        <div class="oj-flex oj-flex-item weather-info-panel" data-bind="visible: isApplyClicked">
+        <div class="oj-flex oj-flex-item weather-info-panel" data-bind="click:applyDate, visible: isApplyClicked">
           <div class="weather-container">
-            <div class="oj-flex-start"><span class="weather-info-font">17 oC</span>
-              <span class="weather-details-font">Clear/Few Clouds
+            <div class="oj-flex-start">
+              <span class="weather-info-font" data-bind="text: forecastWeatherByDate.tempAvg"></span>
+              <span class="weather-details-font" data-bind="text: forecastWeatherByDate.description">
               </span>
             </div>
 
-            <img class="weather-icon">
+            <img class="weather-icon" data-bind="attr: { src: forecastWeatherByDate.icon }">
           </div>
           <div class="weather-info-container">
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">18</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.feelsLikeAvg"></span>
                 <span class="weather-details-font">Feels like</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">18</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind"></span>
                 <span class="weather-details-font">Wind</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">18</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_gust"></span>
                 <span class="weather-details-font">Wind Gust</span>
               </div>
             </div>
 
             <div class="oj-flex">
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">45C</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_gust"></span>
                 <span class="weather-details-font">Wind Deg</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">85%</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.wind_deg"></span>
                 <span class="weather-details-font">Humidity</span>
               </div>
 
               <div class="oj-flex oj-flex-item weather-info-box">
-                <span class="weather-info-font2">18</span>
+                <span class="weather-info-font2" data-bind="text: forecastWeatherByDate.pressure"></span>
                 <span class="weather-details-font">Pressure</span>
               </div>
-
             </div>
           </div>
         </div>
@@ -176,7 +176,8 @@
     </div>
 
     <div class="chart-container">
-      <h6>Weekly Variations</h6>
+      <div class="weekly-variations">Weekly Variations</div>
+      <div class="temperature-styling">Temparature</div>
       <div class="line-chart">
         <oj-chart type='line' style="height: 100%; width: 100%; margin: auto;" groups=[[chartGroups]]
           series=[[temperatureData]]>

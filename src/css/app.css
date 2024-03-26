@@ -9,6 +9,20 @@
   color: rgb(29, 28, 28);
 }
 
+.weekly-variations {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.temperature-styling {
+  padding: 10px 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(36,93, 99);
+  color: gray;
+  text-decoration-thickness: 2px;
+}
+
 .w-button {
   background-color: #e0e0e0;
   margin-right: 10px;
@@ -82,8 +96,9 @@
 }
 
 .weather-details-font {
-  font-size: 14px;
+  font-size: 18px;
   font-family:Calibri;
+  color: gray;
 }
 
 .weather-info-font {
@@ -107,7 +122,6 @@
 
 .input-date-div {
   margin:  30px 0;
-  display: inline-flex;
 }
 
 .input-date {
@@ -117,6 +131,10 @@
 
 .apply-date-container {
   display: inline-flex;
+}
+
+.apply-date-container.oj-flex {
+  flex-wrap: nowrap;
 }
 
 .demo-oracle-icon {

@@ -24,11 +24,6 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojrespon
       // Header
       // Application Name used in Branding Area
       this.appName = ko.observable("Weather of Thessaloniki");
-
-      // Footer
-      this.footerLinks = [
-        { name: "Contact Me", id: "contactUs", linkTarget: "" },
-      ];
      }
 
      // release the application bootstrap busy state
