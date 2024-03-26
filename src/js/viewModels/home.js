@@ -7,6 +7,7 @@ define([
   "ojs/ojarraydataprovider",
   "ojs/ojknockouttemplateutils",
   "ojs/ojknockout",
+  "text!views/WeatherDataHtml.html",
 ], function (
   ko,
   ojChart,
@@ -14,7 +15,10 @@ define([
   ResponsiveUtils,
   ResponsiveKnockoutUtils,
   ArrayDataProvider,
-  KnockoutTemplateUtils
+  KnockoutTemplateUtils,
+  oj,
+  WeatherDataHtml,
+  mockData
 ) {
   function DashboardViewModel() {
     const self = this;
@@ -24,6 +28,10 @@ define([
     self.isDateSelected = ko.observable(false);
     self.isApplyClicked = ko.observable(false);
     self.selectedDate = ko.observable(null);
+    self.weatherDataHtml = ko.observable({
+      viewModel: self,
+      view: WeatherDataHtml
+  });
     self.weatherData = ko.observable();
 
     self.weatherProps = {
@@ -72,6 +80,8 @@ define([
       self.isTodaySelected(false);
       self.isDateSelected(false);
       self.isApplyClicked(false);
+
+      self.updateViewModelData(mockData);
     };
 
     self.applyDate = function () {
