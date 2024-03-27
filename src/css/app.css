@@ -137,6 +137,53 @@
   flex-wrap: nowrap;
 }
 
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    width: auto;
+    margin: 0;
+  }
+  .weather-info-font{
+    font-size: 30px;
+  }
+  .weather-info-font2{
+    font-size: 15px;
+  }
+  .weather-details-font {
+    font-size: 12px;
+  }
+  .w-button .oj-button-button {
+    padding: 0px;
+}
+.w-button {
+  background-color: #e0e0e0;
+  margin-right: 0px;
+}
+.input-date {
+  width: 150px;
+  margin-right: 15px;
+}
+.line-chart {
+  width: 100%;
+  height: 230px;
+}
+.weather-info-box {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 25%;
+  margin: 5px;
+  padding: 8px;
+  display: block;
+}
+.weekly-variations {
+  margin-top: 25px;
+  font-weight: 600;
+  font-size: 20px;
+}
+}
+
 .demo-oracle-icon {
   width:137px;
   height:18px
