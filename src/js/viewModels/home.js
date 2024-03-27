@@ -51,10 +51,6 @@ define([
     self.temperatureData = ko.observableArray([]);
     self.chartGroups = ko.observableArray([]);
 
-    self.isApplyButtonEnabled = ko.computed(function () {
-      return self.selectedDate() !== null && self.selectedDate() !== "";
-    });
-
     self.isTodaySelectedClicked = function () {
       self.isNowSelected(false);
       self.isTodaySelected(true);
@@ -83,6 +79,10 @@ define([
 
       self.updateViewModelData(mockData);
     };
+
+    self.isApplyButtonEnabled = ko.computed(function () {
+      return self.selectedDate() !== null && self.selectedDate() !== "";
+    });
 
     self.applyDate = function () {
 
